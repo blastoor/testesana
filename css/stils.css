@@ -39,7 +39,7 @@ body {
     letter-spacing: 5px;
   }
   #skewed {transform:skew(60deg, -30deg) scaleY(.66667);
-  color:#8b4513}
+  color:#8b4513;}
   .rounded-corners{border-radius: 10px;}
   .navbar-nav  li a:hover {
     color: #1abc9c !important;
