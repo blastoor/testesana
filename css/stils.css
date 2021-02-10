@@ -50,6 +50,6 @@ body {
   width: 100%;
 }
 
-.sticky + .content {
+.sticky + .container-fluid {
   padding-top: 60px;
 }
