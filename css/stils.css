@@ -44,3 +44,12 @@ body {
   .navbar-nav  li a:hover {
     color: #1abc9c !important;
   }
+  .sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.sticky + .content {
+  padding-top: 60px;
+}
