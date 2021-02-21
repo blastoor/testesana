@@ -1,16 +1,104 @@
 <!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
-<html>
-    <head>
-        <title>TODO supply a title</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    </head>
-    <body>
-        <div>TODO write content</div>
-    </body>
+<html lang="en">
+<head>
+  <!-- Theme Made By www.w3schools.com - No Copyright -->
+  <title>HTML un CSS elementi</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="css/stils.css">
+</head>
+<body>
+<!-- Navbar -->
+<nav class="navbar navbar-default" id="navbar">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#">Me</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#div">&lt;div&gt;</a></li>
+        <li><a href="#span">&lt;span&gt;</a></li>
+        <li><a href="#a">&lt;a&gt;</a></li>
+        <li><a href="#css">CSS</a></li>
+        <li><a href="laukums.html">Laukums</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- First Container -->
+<div id="div" class="container-fluid bg-1 text-center">
+  <h2 class="margin">&lt;div&gt;</h2>
+  <p>Izmanto <span style="font-style:italic">HTML</span> dokumenta sadaļas definēšanai.
+      Tags izveido konteineru <span style="font-style:italic">HTML</span> elementu skeletam, kuram vēlāk var piešķirt personību ar 
+      <span style="font-style:italic">CSS</span> vai <span style="font-style:italic">JavaScript</span> elementiem.</p>
+</div>
+
+<!-- Second Container -->
+<div id="span" class="container-fluid bg-2 text-center">
+  <h2 class="margin">&lt;span&gt;</h2>
+  <p>Izmanto atsevišķu <span style="font-style:italic">iekšlīnijas</span> elementu formatēšanai. 
+      Tā darbība ir salīdzināma ar &lt;div&gt; tagu, taču &lt;span&gt; tags konteineru veido kā daļu no jau esoša 
+  <span style="font-style:italic">HTML</span> elementa rindas.</p>
+</div>
+
+<!-- Third Container (Grid) -->
+<div id="a" class="container-fluid bg-3 text-center">    
+  <h2 class="margin">&lt;a&gt;</h2>
+  <p>Izmanto <span style="font-style:italic">hiperlinku</span> ievietošanai <span style="font-style:italic">HTML</span>
+  dokumentā. Atkarībā no taga atribūta <span style="font-style:italic">href</span> pielietojuma 
+  linku var norādīt tā tiešajā formā vai izveidot tam nosaukumu.</p>
+</div>
+
+<div id="css" class="container-fluid bg-4 text-center">  
+  <div class="row">
+    <div class="col-sm-4">
+      <h4>mix-blend-mode</h4>
+      <p>Šī <span style="font-style:italic">CSS</span> metode ļauj sapludināt vairākus dokumenta slāņus dažādos veidos. 
+          Piemērā dotajā mājaslapā fona bildēm mainās pa virsu uzpludinātā krāsa atkarībā no sadaļas.</p>
+      <img src="bildes/bilde1.png" class="img-responsive margin rounded-corners" style="width:100%" alt="Image">
+      <img src="bildes/bilde2.png" class="img-responsive margin" style="width:100%" alt="Image">
+    </div>
+    <div class="col-sm-4">
+      <h4>shape-outside</h4>
+      <p>Šī <span style="font-style:italic">CSS</span> metode ļauj aplauzt elementus apkārt citiem, piemēram, tekstu ap bildi. 
+          Aplaušanu var veikt noteiktām ģeometriskām formām vai arī brīvām formām, kā piemērā.</p>
+      <img src="bildes/bilde3.png" class="img-responsive margin rounded-corners" style="width:100%" alt="Image">
+      <img src="bildes/bilde4.png" class="img-responsive margin" style="width:100%" alt="Image">
+    </div>
+    <div class="col-sm-4"> 
+      <h4>transform</h4>
+      <p id="skewed">Šim efektam nav nepieciešami komentāri.</p>
+      <img src="bildes/bilde5.png" class="img-responsive margin" style="width:100%" alt="Image">
+    </div>
+  </div>
+</div>
+
+<script>
+window.onscroll = function() {myFunction()};
+var navbar = document.getElementById("navbar");
+var sticky = navbar.offsetTop;
+function myFunction() {
+  if (window.pageYOffset >= sticky) {
+    navbar.classList.add("sticky")
+  } else {
+    navbar.classList.remove("sticky");
+  }
+}
+</script>
+<!-- Footer -->
+<footer class="container-fluid bg-5 text-center">
+  <p>Bootstrap Theme Made By <a href="https://www.w3schools.com">www.w3schools.com</a></p> 
+</footer>
+
+</body>
 </html>
