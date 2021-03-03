@@ -13,6 +13,7 @@ and open the template in the editor.
         <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="css/laukstils.css">
     </head>
     <body>
         <label for="lauks">Malas garums:</label>
@@ -30,6 +31,7 @@ and open the template in the editor.
                    let mdivs=document.createElement("div");
                    for (let j=0; j<n; j++){
                        let b=document.createElement("button");
+                       b.class="pog";
                        b.innerHTML=i*n+j+1;
                        mdivs.appendChild(b);
                    }
