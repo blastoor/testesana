@@ -21,7 +21,30 @@ and open the template in the editor.
         <button onclick="generators()">Ģenerēt laukumu</button><br>
         <div id="sak"></div>
         <script>
+            var bin=[];
+            var dec=[];
+            let saraksts=[];
+            function sajukums(){
+                for(let i=0; i<32; i++){
+                    bin[i]=i+1;
+                    dec[i]=-i-1;
+                }
+                saraksts=[];
+                let n=document.getElementById("skaitlis").value;
+                for(let i=0;i<n*n/2;i++){
+                    saraksts.push(bin[i]);
+                    saraksts.push(dec[i]);
+                }
+                for(let i=0;i<saraksts.length;i++){
+                    let rand=Math.floor(Math.random()*saraksts.length);
+                    let tmp=saraksts[rand];
+                    saraksts[rand]=saraksts[i];
+                    saraksts[i]=tmp;
+                }
+            }
+
             function generators(){
+               sajukums();
                let e=document.getElementById("sak");
                document.body.removeChild(e);
                let n=document.getElementById("skaitlis").value;
@@ -31,8 +54,10 @@ and open the template in the editor.
                    let mdivs=document.createElement("div");
                    for (let j=0; j<n; j++){
                        let b=document.createElement("button");
-                       b.setAttribute("class", "pog")
-                       b.innerHTML=i*n+j+1;
+                       b.setAttribute("class", "pog");
+                       let a=i*n+j+1;
+                       b.setAttribute("id", a);
+                       b.innerHTML=saraksts[i*n+j];
                        mdivs.appendChild(b);
                    }
                    ldivs.appendChild(mdivs);
