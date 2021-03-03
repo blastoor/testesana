@@ -31,7 +31,7 @@ and open the template in the editor.
                    let mdivs=document.createElement("div");
                    for (let j=0; j<n; j++){
                        let b=document.createElement("button");
-                       b.class="pog";
+                       b.setAttribute("class", "pog")
                        b.innerHTML=i*n+j+1;
                        mdivs.appendChild(b);
                    }
