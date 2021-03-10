@@ -28,7 +28,11 @@ and open the template in the editor.
         <script>
             var bin=[];
             var dec=[];
-            let saraksts=[];
+            var saraksts=[];
+            var id1;
+            var id2;
+            var count=0;
+            var corr=false;
             function sajukums(){
                 for(let i=0; i<32; i++){
                     bin[i]=i+1;
@@ -49,6 +53,7 @@ and open the template in the editor.
             }
 
             function generators(){
+               count=0;
                sajukums();
                let e=document.getElementById("sak");
                document.body.removeChild(e);
@@ -59,15 +64,39 @@ and open the template in the editor.
                    let mdivs=document.createElement("div");
                    for (let j=0; j<n; j++){
                        let b=document.createElement("button");
-                       b.setAttribute("class", "pog");
+                       b.setAttribute("class", "neredz");
                        let a=i*n+j;
                        b.setAttribute("id", a);
-                       b.innerHTML=saraksts[i*n+j];
+                       b.setAttribute("onclick", "maina(this)");
+                       b.innerHTML=saraksts[a];
                        mdivs.appendChild(b);
                    }
                    ldivs.appendChild(mdivs);
                }
                document.body.appendChild(ldivs);
+            }
+            
+            function maina(poga){
+                if (count%2 == 0){
+                    if (count > 1&&corr == false){
+                        document.getElementById(id1).className="neredz";
+                        document.getElementById(id2).className="neredz";
+                    }
+                    poga.className="redz";
+                    id1=poga.id;
+                    count++;
+                    corr = false;
+                }
+                else{
+                    poga.className="redz";
+                    id2=poga.id;
+                    count++;
+                    if (Math.abs(saraksts[id1])==Math.abs(saraksts[id2])){
+                        corr=true;
+                        document.getElementById(id1).className="done";
+                        document.getElementById(id2).className="done";
+                    }
+                }
             }
         </script>
     </body>
