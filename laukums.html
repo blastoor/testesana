@@ -33,13 +33,14 @@ and open the template in the editor.
             var id2;
             var count=0;
             var corr=false;
+            var beigt=0;
+            var n=0;
             function sajukums(){
                 for(let i=0; i<32; i++){
                     bin[i]=i+1;
                     dec[i]=-i-1;
                 }
                 saraksts=[];
-                let n=document.getElementById("skaitlis").value;
                 for(let i=0;i<n*n/2;i++){
                     saraksts.push(bin[i]);
                     saraksts.push(dec[i]);
@@ -53,11 +54,12 @@ and open the template in the editor.
             }
 
             function generators(){
+               n=document.getElementById("skaitlis").value;
                count=0;
+               beigt=0;
                sajukums();
                let e=document.getElementById("sak");
                document.body.removeChild(e);
-               let n=document.getElementById("skaitlis").value;
                let ldivs=document.createElement("div");
                ldivs.setAttribute("id", "sak");
                for (let i=0; i<n; i++){
@@ -95,6 +97,10 @@ and open the template in the editor.
                         corr=true;
                         document.getElementById(id1).className="done";
                         document.getElementById(id2).className="done";
+                        beigt=beigt+2;
+                        if (beigt == n*n){
+                            alert("Uzvara!");
+                        }
                     }
                 }
             }
