@@ -37,6 +37,7 @@ and open the template in the editor.
             var n=0;
             var t=0;
             var atskaite;
+            var radis;
             function sajukums(){
                 for(let i=0; i<32; i++){
                     bin[i]=i+1;
@@ -78,6 +79,10 @@ and open the template in the editor.
                    }
                    ldivs.appendChild(mdivs);
                }
+               radis=document.createElement("p");
+               radis.setAttribute("id", "cik");
+               radis.innerHTML="Laiks: 0 sek";
+               ldivs.appendChild(radis);
                document.body.appendChild(ldivs);
                atskaite=setInterval(laiks, 1000);
                
@@ -112,6 +117,8 @@ and open the template in the editor.
             }
             function laiks(){
                 t++;
+                let u=document.getElementById("cik");
+                u.innerHTML="Laiks: "+t+" sek";
             }
         </script>
     </body>
