@@ -3,6 +3,7 @@
     height: 50px;
     font-size: 20px;
     vertical-align: middle;
+    pointer-events: none;
 }
 .neredz {
     width: 50px;
