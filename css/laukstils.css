@@ -22,6 +22,7 @@
     font-size: 13px;
     vertical-align: middle;
     pointer-events: none;
+    background-color: #98FB98;
 }
 #skaitlis{
     width: 35px;

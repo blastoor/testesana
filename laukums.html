@@ -16,13 +16,16 @@ and open the template in the editor.
         <link rel="stylesheet" href="css/laukstils.css">
     </head>
     <body>
+        <div>
         <label for="lauks">Malas garums:</label>
         <select id="skaitlis" name="lauks">
             <option value="2">2</option>
             <option value="4">4</option>
             <option value="6">6</option>
         </select>
-        <button onclick="generators()">Ģenerēt laukumu</button><br>
+        <button onclick="generators()">Ģenerēt laukumu</button>
+        </div>
+        <div><h4><i>Mūsdienu režisori un zināmas to filmas</i></h4></div>
         <div id="sak"></div>
         <script>
             var bin=[];
@@ -63,6 +66,21 @@ and open the template in the editor.
                     "&quotAtpakaļ nākotnē&quot", "&quotViesnīca &quotDiženā Budapešta&quot&quot",
                     "&quotParazīts&quot", "&quotArgo&quot",
                     "&quotPutncilvēks&quot", "&quotŪdens forma&quot"];
+                for(let i=0;i<bin.length;i++){
+                    let rand=Math.floor(Math.random()*bin.length);
+                    let tmp=bin[rand];
+                    bin[rand]=bin[i];
+                    bin[i]=tmp;
+                    let tmph=binh[rand];
+                    binh[rand]=binh[i];
+                    binh[i]=tmph;
+                    let tmp1=dec[rand];
+                    dec[rand]=dec[i];
+                    dec[i]=tmp1;
+                    let tmp2=dech[rand];
+                    dech[rand]=dech[i];
+                    dech[i]=tmp2;
+                }
                 saraksts=[];
                 sarakstsh=[];
                 for(let i=0;i<n*n/2;i++){
