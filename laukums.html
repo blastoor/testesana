@@ -27,7 +27,10 @@ and open the template in the editor.
         <script>
             var bin=[];
             var dec=[];
+            var binh=[];
+            var dech=[];
             var saraksts=[];
+            var sarakstsh=[];
             var id1;
             var id2;
             var count=0;
@@ -39,19 +42,43 @@ and open the template in the editor.
             var radis;
             function sajukums(){
                 for(let i=0; i<18; i++){
-                    bin[i]=i+1;
-                    dec[i]=-i-1;
+                    binh[i]=i+1;
+                    dech[i]=-i-1;
                 }
+                bin=["Kristofers Nolans", "Stīvens Spīlbergs",
+                    "Martins Skorsēze", "Džeimss Kamerons",
+                    "Kventins Tarantino", "Brāļi Koeni",
+                    "Vudijs Allens", "Pīters Džeksons",
+                    "Edgars Raits", "Klints Īstvuds",
+                    "Tims Bērtons", "Deivids Finčers",
+                    "Roberts Zemeckis", "Vess Andersons",
+                    "Bons Čunho", "Bens Afleks",
+                    "Alehandro Gonsaless Injaritu", "Giljermo del Toro",];
+                dec=["&quotPirmsākums&quot", "&quotŠindlera saraksts&quot", 
+                    "&quotVolstrītas vilks&quot", "&quotAvatars&quot", 
+                    "&quotBēdīgi slavenie mērgļi&quot", "&quotKur sirmgalvjiem nav vietas&quot",
+                    "&quotPusnakts Parīzē&quot", "&quotGredzenu pavēlnieks&quot",
+                    "&quotZaļknābis pie stūres&quot", "&quotAmerikāņu snaiperis&quot",
+                    "&quotBetmens&quot (1989)", "&quotCīņas klubs&quot",
+                    "&quotAtpakaļ nākotnē&quot", "&quotViesnīca &quotDiženā Budapešta&quot&quot",
+                    "&quotParazīts&quot", "&quotArgo&quot",
+                    "&quotPutncilvēks&quot", "&quotŪdens forma&quot"];
                 saraksts=[];
+                sarakstsh=[];
                 for(let i=0;i<n*n/2;i++){
                     saraksts.push(bin[i]);
                     saraksts.push(dec[i]);
+                    sarakstsh.push(binh[i]);
+                    sarakstsh.push(dech[i]);
                 }
                 for(let i=0;i<saraksts.length;i++){
                     let rand=Math.floor(Math.random()*saraksts.length);
                     let tmp=saraksts[rand];
                     saraksts[rand]=saraksts[i];
                     saraksts[i]=tmp;
+                    let tmph=sarakstsh[rand];
+                    sarakstsh[rand]=sarakstsh[i];
+                    sarakstsh[i]=tmph;
                 }
             }
 
@@ -103,7 +130,7 @@ and open the template in the editor.
                     poga.className="redz";
                     id2=poga.id;
                     count++;
-                    if (Math.abs(saraksts[id1])==Math.abs(saraksts[id2])){
+                    if (Math.abs(sarakstsh[id1])==Math.abs(sarakstsh[id2])){
                         corr=true;
                         document.getElementById(id1).className="done";
                         document.getElementById(id2).className="done";
