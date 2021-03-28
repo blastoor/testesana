@@ -21,7 +21,6 @@ and open the template in the editor.
             <option value="2">2</option>
             <option value="4">4</option>
             <option value="6">6</option>
-            <option value="8">8</option>
         </select>
         <button onclick="generators()">Ģenerēt laukumu</button><br>
         <div id="sak"></div>
@@ -36,10 +35,10 @@ and open the template in the editor.
             var beigt=0;
             var n=0;
             var t=0;
-            var atskaite;
+            var atskaite=setInterval(laiks, 1000);;
             var radis;
             function sajukums(){
-                for(let i=0; i<32; i++){
+                for(let i=0; i<18; i++){
                     bin[i]=i+1;
                     dec[i]=-i-1;
                 }
@@ -61,6 +60,7 @@ and open the template in the editor.
                count=0;
                beigt=0;
                t=0;
+               clearInterval(atskaite);
                sajukums();
                let e=document.getElementById("sak");
                document.body.removeChild(e);
